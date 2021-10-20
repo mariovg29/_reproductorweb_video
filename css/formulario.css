@@ -1,0 +1,44 @@
+.content { 
+    width: 100%; 
+    height: 100%; 
+    background-color: white; 
+    text-align: center;
+    display: flex;
+  }
+  .imagen{
+    float:right;
+    width: 50%; 
+    padding: 0;
+  }
+  .img{
+    width: 70%;
+    float: right;   
+  }
+  .right{
+    float:right;
+    width: 40%; 
+    padding: 20px;
+    margin-top: 50px;
+  }
+  .izq {
+      width: 50%;
+      float: left;
+      font-size: 30px;
+      margin: 0;
+      padding: 0;
+  }
+  .der {
+      width: 50%;
+      float: left;
+      margin-left: -60px;
+      margin-top: 30px;
+      text-align: left;
+      color: red;
+  }
+  .registra {
+      text-align: left;
+      float: left;
+      padding-left: 80px;
+  }
+ 
+  

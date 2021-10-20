@@ -1,0 +1,42 @@
+.content{
+    width: 100%; 
+    height: 100%; 
+    text-align: center;
+    
+}
+.encabezado{
+    width: 100%;
+    text-align: center;
+    display: flex;
+       
+}
+.izq {
+    width: 50%;
+    float: left;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+.der {
+    width: 50%;
+    float: left;
+    margin-left: 0px;
+    margin-top: 30px;
+    text-align: left;
+    color: red;
+}
+.msj {
+    text-align: center;
+}
+.botones{
+    margin-top: 50px;
+}
+.img{
+    float:center;
+    width: 40%; 
+    padding: 0px 70px ;
+}
+.corr{
+    margin-bottom: 25px;
+}

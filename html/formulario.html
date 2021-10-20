@@ -4,14 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="../css/formulario.css">
     <title>Formulario</title>
+
 </head>
 <body>
 
-    <div>
-        <h1>
-            Hola Mundo
-        </h1>
+    <div class="content" >
+        <div class="imagen" ; >
+            <img class = img src="../img/plecs.jpg" alt="Cargando Imagen...">
+           
+
+        </div>
+        <div class ="right" >
+            <div class= izq>
+                <h1>
+                    XLTI
+                </h1>
+            </div>
+            <div class= der>
+                <p>
+                    Xaltilolli<br/>
+                    espacio de artes,     <br/>
+                    memorias y residencias
+                </p>
+            </div>
+            <div class = "registra" >
+                <h1 >
+                    Registra tu Testimonio
+                </h1>
+                <form action="insertarDatos.php" method="POST">
+                    <label for="nombre">Nombre completo</label><br/>
+                    <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Ingresa tu nombre" /><br/><br/>
+                    <label for="mail">Ingresa tu correo:</label><br/>
+                    <input 
+                    type="email" 
+                    id="mail" 
+                    name="mail"
+                    placeholder="ingresa tu correo" /><br/><br/>
+                    <input type="submit" value="Siguiente" />
+
+                </form>
+            </div>
+           
+        </div>
+        
     </div>
     
 </body>
