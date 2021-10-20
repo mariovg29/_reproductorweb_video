@@ -7,12 +7,13 @@
             '<p class= "rojo ">Espacio de artes, memorias y resistencias</p>'+
       
               '<h2 class = "cuentanos ">Cuentanos sobre tu experiencia y vivencia en Tlatelolco<h2>'+
-              '<div class = "contenedor-botones"><a href="html/formulario.html" >'+
-              '<button class = "btn"> <strong<span>Grabar Testimonio</span></strong> </button> </a>'+     
-              '<a href="html/colage_videos.html" >'         
-              +'<button class = "btn"> <strong><span>Ver Testimonios</span></strong></button> </a>'+
-              '<button class ="btn t"><span>Grabar Testimonio</span></span></button>'+
-              '<button class = "btn t"><span>Ver Testimonios</span></button>'+
+              '<div class = "contenedor-botones">'+
+              // <a href="html/formulario.html" >'+
+              // '<button class = "btn"> <strong<span>Grabar Testimonio</span></strong> </button> </a>'+     
+              // '<a href="html/colage_videos.html" >'         
+              // +'<button class = "btn"> <strong><span>Ver Testimonios</span></strong></button> </a>'+
+                  '<a class = "btn izq" href="html/formulario.html"    ><span>Grabar Testimonio</span></a>'+
+                  '<a class = "btn izq" href="html/colage_videos.html" ><span>Ver Testimonios  </span></a>'+
               '</div>'
               
               

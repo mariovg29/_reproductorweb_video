@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="../css/sweetalert2.css">
+    <title>Grabar</title>
+</head>
+<body>
+    <div class="contenedor-logo" >
+        <div class= "izqlogo">
+            <h1>
+                XLTI
+            </h1>
+        </div>
+        <div class= "derlogo">
+            <p>
+                Xaltilolli<br/>
+                espacio de artes,     <br/>
+                memorias y residencias
+            </p>
+        </div>
+    </div>
+    
+    <div style="text-align: center;">
+        <!-- <h1>Grabar Video</h1> -->
+   <video id="video" autoplay= true></video>
+
+   <script>
+       const video= document.getElementById('video');
+       navigator.mediaDevices.getUserMedia({audio:false, video: true})
+       .then(
+           (stream)=>{
+               video.srcObject= stream;
+               console.log(stream);
+           }
+       ).catch(
+           (error)=>{
+               console.log(error);
+
+           }
+       )
+       
+   </script>  
+
+    </div>
+    <div class = "contenedor-botones" >
+        <a class = "btn izq" href="html/formulario.html"    ><span>Tomar Foto</span></a>
+        <a class = "btn izq" href="html/colage_videos.html" ><span>Grabar Videos  </span></a>
+    </div>
+   
+    
+</body>
+</html>
