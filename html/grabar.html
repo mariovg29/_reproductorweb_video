@@ -8,6 +8,11 @@
     <title>Grabar</title>
 </head>
 <body>
+    <?php
+    if($_post['nombre']=='mario'){
+    echo "mario";}else{echo "hola";}
+    ?>
+   
     <div class="contenedor-logo" >
         <div class= "izqlogo">
             <h1>
@@ -22,18 +27,47 @@
             </p>
         </div>
     </div>
+    <div class="contendor-foto" >
+        <div >
+            <video class="item1" id="video" autoplay= true ></video>
+        </div>
+        <div>
+            <canvas class="item2" id = "fotocanvas" height="300px" width="300px" ></canvas>
+        </div>
+    </div>
+    <div class="takefoto">
+       
+            <a class = "btn izq" id= "takephoto" href="../html/formulario.html"   ><span>Tomar Foto</span></a>
+       
+        
+
+    </div>
+
+        
+
     
-    <div style="text-align: center;">
-        <!-- <h1>Grabar Video</h1> -->
-   <video id="video" autoplay= true></video>
+    
+    <!-- <div class="contenedor_botones">
+       
+        <video id="video" autoplay= true></video>
+        <div>
+            <canvas id = "fotocanvas" height="300" width="300" ></canvas>
+        </div>
+    </div>
+   
+    <div class = "contenedor-botones" >
+        <button class = "btn izq" id= "takephoto"   ><span>Tomar Foto</span></button>
+        <a class = "btn izq" href="html/colage_videos.html" ><span>Grabar Video  </span></a>
+    </div>    -->
 
    <script>
+      
        const video= document.getElementById('video');
-       navigator.mediaDevices.getUserMedia({audio:false, video: true})
+       navigator.mediaDevices.getUserMedia({audio:true, video: true})
        .then(
            (stream)=>{
                video.srcObject= stream;
-               console.log(stream);
+               
            }
        ).catch(
            (error)=>{
@@ -41,14 +75,26 @@
 
            }
        )
+       document.getElementById('takephoto').addEventListener("click", ()=>{
+           takephoto();
+
+       });
+       function takephoto(){
+           const canvas = document.getElementById("fotocanvas");
+           let ctx = canvas.getContext('2d');
+           ctx.drawImage(video, 0, 0, 300, 300);   
+           let foto= canvas.toDataURL();
+           let enlace = document.createElement('a'); 
+           enlace.download = "$v1";
+           enlace.href=foto;
+           enlace.click();   
+           window.click();    
+       }
        
    </script>  
 
-    </div>
-    <div class = "contenedor-botones" >
-        <a class = "btn izq" href="html/formulario.html"    ><span>Tomar Foto</span></a>
-        <a class = "btn izq" href="html/colage_videos.html" ><span>Grabar Videos  </span></a>
-    </div>
+   
+    
    
     
 </body>

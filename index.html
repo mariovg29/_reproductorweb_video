@@ -7,22 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tlatelolco</title>
      <!-- Inclur script de sweet Alert  y archivo de css-->
-     <script src="assets/sweet/sweetalert2.min.js"></script>
+     
      <link rel= "stylesheet" href="css/sweetalert2.css">
 </head>
 <body>
-    <div class="contenedor">
-        <header>
-            <h1>Xaltilolli</h1>
-            <h5>espacio de artes, memorias y resistencias</h5>
-            <h2>Cuentanos sobre tu experiencia y vivencia en tlatelolco</h2>
-            <h5>espacio de artes, memorias y resistencias</h5>
-            <h2>Cuentanos sobre tu experiencia y vivencia en tlatelolco</h2>
-        </header>
+    <div class="contenedor-mansory">
+       <img class="grid-img" src="https://picsum.photos/230/215?random=1.jpg"width ="230" height="215" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/320.jpg"width ="230" height="320" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/153.jpg"width ="230" height="153" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/260.jpg"width ="230" height="260" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/450.jpg"width ="230" height="450" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/135.jpg"width ="230" height="135" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/287.jpg"width ="230" height="287" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/500.jpg"width ="230" height="500" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/222.jpg"width ="230" height="222" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/321.jpg"width ="230" height="321" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/150.jpg"width ="230" height="150" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/165.jpg"width ="230" height="165" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/302.jpg"width ="230" height="302" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/286.jpg"width ="230" height="286" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/98.jpg" width ="230" height="98" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/490.jpg"width ="230" height="490" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/124.jpg"width ="230" height="124" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/510.jpg"width ="230" height="510" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/320.jpg"width ="230" height="320" alt="">
+       <img class="grid-img" src="https://picsum.photos/230/260.jpg"width ="230" height="260" alt="">
 
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/sweetAlert.js"></script>
-    
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <!-- <script>
+        var elem= document.querySelector(".grid-img");
+        imagesLoaded(elem, ()=>{
+            var msnry = new Masonry(elem,{
+                itemSelector = ".grid-img",
+                columnWidth: 230,
+                gutter: 30,
+                isFitWidth: true,
+            });
+        })
+
+    </script>     -->
+    <script>
+        var elem = document.querySelector('.contenedor-mansory');
+        var msnry = new Masonry( elem, {
+            // options
+        itemSelector: '.grid-img',
+        columnWidth: 230,
+        gutter: 30,
+        isFitWidth: true,
+        });
+    </script>
 </body>
 </html>

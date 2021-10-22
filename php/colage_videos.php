@@ -12,6 +12,15 @@
             Hola Collage
         </h1>
     </div>
+   
+     <?php
+     require ("conexion.php");
+    //  $conexion= mysql_connect($db_host, $db_usuario, $db_contraseña);
+    //  if(mysql_connect_errno()){
+    //      echo "Fallo conexion a base de datos";
+    //      exit();
+    //  }else echo "good";
+     ?>
     
 </body>
 </html>

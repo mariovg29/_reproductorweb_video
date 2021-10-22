@@ -13,7 +13,7 @@
               // '<a href="html/colage_videos.html" >'         
               // +'<button class = "btn"> <strong><span>Ver Testimonios</span></strong></button> </a>'+
                   '<a class = "btn izq" href="html/formulario.html"    ><span>Grabar Testimonio</span></a>'+
-                  '<a class = "btn izq" href="html/colage_videos.html" ><span>Ver Testimonios  </span></a>'+
+                  '<a class = "btn izq" href="php/colage_videos.php" ><span>Ver Testimonios  </span></a>'+
               '</div>'
               
               

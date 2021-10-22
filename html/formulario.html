@@ -4,61 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" href="../css/formulario.css">
+    <!-- <link rel= "stylesheet" href="../css/formulario.css"> -->
     <link rel= "stylesheet" href="../css/sweetalert2.css">
     <title>Formulario</title>
 
 </head>
 <body>
 
-    <div class="content" >
-        <div class="imagen" ; >
-            <img class = img src="../img/plecs.jpg" alt="Cargando Imagen...">
-           
-
-        </div>
-        <div class ="right" >
-            <div class= izq>
-                <h1>
-                    XLTI
-                </h1>
-            </div>
-            <div class= der>
-                <p>
-                    Xaltilolli<br/>
-                    espacio de artes,     <br/>
-                    memorias y residencias
-                </p>
-            </div>
-            <div class = "registra" >
-                <h1 >
-                    Registra tu Testimonio
-                </h1>
-                <form >
-                    <label for="nombre">Nombre completo</label><br/>
-                    <input 
-                        type="text" 
-                        id="nombre" 
-                        name="nombre" 
-                        placeholder="Ingresa tu nombre" />
-                        <br/><br/>
-                    <label for="mail">Ingresa tu correo:</label>
-                    <br/>
-                    <input 
-                        type="email" 
-                        id="mail" 
-                        name="mail"
-                        placeholder="ingresa tu correo" />
-                    <br/><br/>
-                    <a class = "btn izq" href="./eleccion.html"><span>Continuar</span></a>
-                   
-
-                </form>
-            </div>
-           
-        </div>
-        
-    </div>
     
+        <div class="contenedor-botones">
+            <div id= izquierda>
+                <img class = "img" src="../img/plecs.jpg" alt="Cargando Imagen...">
+            </div>
+
+            <div id="derecha">
+                <div class="contenedor-logo" >
+                    <div class= "izqlogo">
+                        <h1>
+                            XLTI
+                        </h1>
+                    </div>
+                    <div class= "derlogo">
+                        <p>
+                            Xaltilolli<br/>
+                            espacio de artes,     <br/>
+                            memorias y residencias
+                        </p>
+                    </div>
+                </div>
+                <div class = "contenedor-formulario">
+                    <div class="formulario">
+                        <h1 >
+                            
+                            Registra tu Testimonio
+                            <br>
+                        </h1>
+                        <div class="datos">
+                            <form action = 
+                            "http://localhost:8080/reproductordual/_reproductorweb_video/html/grabar.html"
+                            method="post"
+                            >
+                                <br>
+                                <br>
+                                <label for="nombre">Nombre completo</label>
+                                <br/>
+                                <input class="text-input"
+                                    type="text" 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    placeholder="Ingresa tu nombre" />
+                                <br/>
+                                <br/>
+                                <br>
+                                <label for="mail">Correo Electrónico</label>
+                                <br>
+                               
+                                <input class="text-input"
+                                    type="email" 
+                                    id="mail" 
+                                    name="mail"
+                                    placeholder="ingresa tu correo" />
+                                <br/>
+                                <br/>
+                                <br>
+                                <br>
+
+                        </div>
+                        
+                            <a class = "btn izq" href="./eleccion.html", onclick ="sub()"><span>Siguiente</span></a>
+                           
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+        <script type="text/javascript">
+        var nombre = null;
+
+        var correo = null;
+        function sub(){
+            nombre = document.getElementById("nombre")[0].value;
+
+            correo = document.getElementById("mail")[0].value;
+            alert(nombre+" "+correo);
+
+            
+        }
+        
+
+        </script>
+       
 </body>
 </html>
