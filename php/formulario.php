@@ -40,10 +40,10 @@
                             <br>
                         </h1>
                         <div class="datos">
-                            <form action = 
-                            "http://localhost:8080/reproductordual/_reproductorweb_video/html/grabar.html"
-                            method="post"
-                            >
+                            <form method="post">
+                            <!-- "http://localhost:8080/reproductordual/_reproductorweb_video/html/grabar.html" -->
+                            
+                            
                                 <br>
                                 <br>
                                 <label for="nombre">Nombre completo</label>
@@ -52,7 +52,12 @@
                                     type="text" 
                                     id="nombre" 
                                     name="nombre" 
-                                    placeholder="Ingresa tu nombre" />
+                                    placeholder="Ingresa tu nombre"
+                                    title=" Solo letras y espacios en blanco"
+                                    pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                                    onkeyup="validar(this.form)"
+                                    required
+                                    />
                                 <br/>
                                 <br/>
                                 <br>
@@ -63,15 +68,29 @@
                                     type="email" 
                                     id="mail" 
                                     name="mail"
-                                    placeholder="ingresa tu correo" />
+                                    placeholder="ingresa tu correo"
+                                    title="Email incorrecto" 
+                                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                                    onkeyup="validar(this.form)"
+                                    required                                   
+                                    />
                                 <br/>
                                 <br/>
                                 <br>
                                 <br>
 
-                        </div>
+                        </div>                       
                         
-                            <a class = "btn izq" href="./eleccion.html", onclick ="sub()"><span>Siguiente</span></a>
+                            <input  
+                            type="submit" 
+                            name= "Siguiente" 
+                            value="Siguiente" 
+                            class="btn izq" 
+                            disabled ="disabled"
+                                                     
+                            
+                             >
+                            <!-- <a class = "btn izq" href="./eleccion.html", onclick ="sub()"><span>Siguiente</span></a> -->
                            
                         </form>
                     </div>
@@ -80,21 +99,27 @@
             </div>
            
         </div>
-        <script type="text/javascript">
-        var nombre = null;
-
-        var correo = null;
-        function sub(){
-            nombre = document.getElementById("nombre")[0].value;
-
-            correo = document.getElementById("mail")[0].value;
-            alert(nombre+" "+correo);
-
-            
+        <script>
+            function validar(frm){
+                frm.Siguiente.disabled=(frm.mail.value==''|| frm.nombre.value=='');
+                
+            //     const nombre = document.getElementById("nombre");
+            //     const correo = document.getElementById("mail");
+            //     if(nombre.value !=" " && correo.value !=" "){
+            //         document.getElementById('Siguiente').disabled="";
+            //     }else{
+            //         document.getElementById('Siguiente').disabled=true;
+            //     }
+            // 
         }
-        
-
+          
         </script>
+
+        
+        <?php
+     require ("registrar.php");
+    
+     ?>
        
 </body>
 </html>

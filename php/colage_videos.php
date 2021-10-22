@@ -14,7 +14,7 @@
     </div>
    
      <?php
-     require ("conexion.php");
+     require ("consulta.php");
     //  $conexion= mysql_connect($db_host, $db_usuario, $db_contraseña);
     //  if(mysql_connect_errno()){
     //      echo "Fallo conexion a base de datos";
