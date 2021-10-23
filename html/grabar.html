@@ -8,10 +8,12 @@
     <title>Grabar</title>
 </head>
 <body>
-    <?php
+    <btn?php
     if($_post['nombre']=='mario'){
     echo "mario";}else{echo "hola";}
     ?>
+    <div class="contenedor-principal">
+   
    
     <div class="contenedor-logo" >
         <div class= "izqlogo">
@@ -37,11 +39,14 @@
     </div>
     <div class="takefoto">
        
-            <a class = "btn izq" id= "takephoto" href="../html/formulario.html"   ><span>Tomar Foto</span></a>
+            <btn class = "btn izq" id= "takevideo"
+              
+             ><span>Comenzar a grabar</span></btn>
        
         
 
     </div>
+</div>
 
         
 
@@ -60,38 +65,10 @@
         <a class = "btn izq" href="html/colage_videos.html" ><span>Grabar Video  </span></a>
     </div>    -->
 
-   <script>
-      
-       const video= document.getElementById('video');
-       navigator.mediaDevices.getUserMedia({audio:true, video: true})
-       .then(
-           (stream)=>{
-               video.srcObject= stream;
-               
-           }
-       ).catch(
-           (error)=>{
-               console.log(error);
-
-           }
-       )
-       document.getElementById('takephoto').addEventListener("click", ()=>{
-           takephoto();
-
-       });
-       function takephoto(){
-           const canvas = document.getElementById("fotocanvas");
-           let ctx = canvas.getContext('2d');
-           ctx.drawImage(video, 0, 0, 300, 300);   
-           let foto= canvas.toDataURL();
-           let enlace = document.createElement('a'); 
-           enlace.download = "$v1";
-           enlace.href=foto;
-           enlace.click();   
-           window.click();    
-       }
-       
-   </script>  
+   <script src= "../js/capturarVideo.js"></script>  
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+   
 
    
     

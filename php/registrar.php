@@ -20,6 +20,7 @@ include("conexion.php");
                  }else{
                     ?>
                      <script type="text/javascript">
+                     
                         alert("Correo ya registrado");
                         // window.location.href="../index.html";
                         window.location.href="formulario.php";

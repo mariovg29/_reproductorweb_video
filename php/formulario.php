@@ -14,7 +14,7 @@
     
         <div class="contenedor-botones">
             <div id= izquierda>
-                <img class = "img" src="../img/plecs.jpg" alt="Cargando Imagen...">
+                <img class = "img" src="../img/fondo.png" alt="Cargando Imagen...">
             </div>
 
             <div id="derecha">
