@@ -40,7 +40,7 @@
                             <br>
                         </h1>
                         <div class="datos">
-                            <form method="post">
+                            <form method="post" >
                             <!-- "http://localhost:8080/reproductordual/_reproductorweb_video/html/grabar.html" -->
                             
                             
@@ -68,7 +68,7 @@
                                     type="email" 
                                     id="mail" 
                                     name="mail"
-                                    placeholder="ingresa tu correo"
+                                    placeholder="Ingresa tu correo"
                                     title="Email incorrecto" 
                                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                                     onkeyup="validar(this.form)"
@@ -87,6 +87,7 @@
                             value="Siguiente" 
                             class="btn izq" 
                             disabled ="disabled"
+                            onclick="guardar_correo()"
                                                      
                             
                              >
@@ -114,6 +115,7 @@
         }
           
         </script>
+        <script src="../js/guardarCorreo.js"></script>
 
         
         <?php

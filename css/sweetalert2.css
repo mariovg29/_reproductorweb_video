@@ -1,3 +1,23 @@
+.fondo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #ED185C;
+}
+.textoDespedida{
+  width: 50%;
+  /* height: 15%; */
+  margin: 18% auto;
+  color: #fff;
+  /* background: chocolate; */
+  text-align: center;
+  font-size: 20px;
+  
+}
 .contenedor-principal{
   width: 100%;
   height: 100%;
@@ -9,7 +29,7 @@
   /* grid-template-columns: repeat(auto-fill, 230px); */
   margin: 0 auto;
   justify-content: center;
-  /* gap: 20px; */
+  gap: 20px;
 }
 .grid-img{
   width: 180px;
@@ -27,6 +47,14 @@
   padding: 2px;
   text-align: center;
   justify-self: center;
+  
+}
+.colage{
+  border-radius: 10px;
+  background: aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
 }
 .contenedor-logo {
   margin: 0;
@@ -41,16 +69,31 @@
 .temporizador{
  align-self: flex-start;
 }
-.contendor-foto{
+.contendor-video{
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 1px;
+}
+.item1{
   text-align: end;
- 
+}
+.item2{
+  text-align: center;
+  line-height: 450px;
+  color: #ED185C;
+  font-weight: bold;
 }
 .takefoto{
   width: 30%;
   margin: 0 auto;
+}
+.verGrabacion{
+  text-align: center;
+  
+}
+.guardarTestimonio{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .contenedor-formulario{
   justify-items: center;
@@ -123,6 +166,7 @@
   top: -40px;
   left: 0;
   transition: .3s ease-in-out all;
+  
 }
 .btn.izq::after {
   content: "";
@@ -156,10 +200,11 @@
 }
 .rojo {
   font-size: 15px;
-  color: red;
+  color: #ED185C;
   margin-top: -5px;
   margin-bottom: 60px;
 }
+
 .cuentanos{
   margin-top: 60px;
   margin-bottom: 60px;
@@ -190,7 +235,7 @@
   margin-left: 0px;
   margin-top: 30px;
   text-align: left;
-  color: red;
+  color: #ED185C;
 }
 .formulario{
   width: 70%;

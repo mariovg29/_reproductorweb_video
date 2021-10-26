@@ -1,5 +1,6 @@
 ///////Tomar y Guardar Video/////////////////////
       
+
 const video= document.getElementById('video');
 
     navigator.mediaDevices.getUserMedia({audio:true, video: true})
@@ -37,9 +38,10 @@ function record(stream){
         console.log("Started");
         btn.removeEventListener("click", Start);
         btn.addEventListener("click", Stop);
+        document.getElementById("takevideo").value= "Detener grabación";
         btn.value = "Stop";
-        let temporizador = new Temporizador('temporizador', 299, 0, 60);
-       temporizador.conteoSegundos();
+        let temporizador = new Temporizador('temporizador', 299, 0, 60);       
+       temporizador.conteoSegundos(),
        setTimeout(()=>mediaRecorder.stop(), 301000);
         
     }
@@ -50,7 +52,7 @@ function record(stream){
         btn.removeEventListener("click", Stop);
         btn.addEventListener("click", Start);
         btn.value = "start";
-        temp.value="00:00";
+        // temp.value="00:00";
     }
 
     
@@ -67,17 +69,19 @@ function record(stream){
         let blob = new Blob(arrvideo, {type: "video/webm"});
         arrvideo =[];
         download(blob);
+        
     }
     
 
     function download(blob){
         let link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
-        link.setAttribute("download", "video_recorded.webm");
+        link.setAttribute("download",localStorage.getItem("mail")+".webm");
         link.style.display = "none";
         document.body.appendChild(link);
         link.click();
         link.remove();
+        window.location.href= ("../html/ver_grabacion.html");
     }
     class Temporizador {
         constructor(id, inicio, fin, contadorsec) {
@@ -87,6 +91,7 @@ function record(stream){
             this.fin = fin;
             this.contador = inicio;
             this.contadorsec = contadorsec;
+
             this.conteoSegundos = function () {
                 if (this.contador == this.fin) {
                     this.conteoSegundos = null;
@@ -113,7 +118,7 @@ function record(stream){
 
 
 
-                document.getElementById("duracion").innerHTML = this.contador--;
+                // document.getElementById("duracion").innerHTML = this.contador--;
                 //    document.getElementById("duracion2").innerHTML =minutos+":"+this.contadorsec;
                 setTimeout(this.conteoSegundos.bind(this), 1000);
 

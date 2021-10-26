@@ -28,8 +28,6 @@ function takephoto(){
     enlace.download = "$v1";
     enlace.href=foto;
     enlace.click();   
-    enlace.click();   
-    mediaRecorder = new MediaRecorder(stream);
-    mediaRecorder.start();
+    
     
 }

@@ -12,9 +12,18 @@ include("conexion.php");
 		$resultado=mysqli_query($conexion,$consulta);
 		
 		while($registro=mysqli_fetch_array($resultado)){
-            $ruta= $registro['RUTA'];
+            $ruta ='../videos/';
+            $correo= $registro['CORREO'];
+            $tipo= '.webm';
+            $url= $ruta.$correo.$tipo;
 			
-            echo ("<h1>$ruta</h1>");
+            // echo ("<h1>$url</h1>");
+            echo("<video class= 'colage' 
+            audio ='false' 
+            autoplay='autoplay'  
+            
+            loop= 'loop'   
+            src = '$url' width='200' height='200' ></video>");
 		}
 		 mysqli_close($conexion);
 

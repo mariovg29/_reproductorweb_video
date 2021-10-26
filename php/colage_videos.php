@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colage Videoteca</title>
 </head>
-<body>
-    <div>
-        <h1>
-            Hola Collage
-        </h1>
-    </div>
-   
+<body>      
      <?php
      require ("consulta.php");
     //  $conexion= mysql_connect($db_host, $db_usuario, $db_contraseña);
