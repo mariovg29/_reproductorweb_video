@@ -37,17 +37,19 @@
                         <h1 >
                             
                             Registra tu Testimonio
-                            <br>
+                            
                         </h1>
-                        <div class="datos">
+                        <div class="datos" id="datos">
                             <form method="post" >
                             <!-- "http://localhost:8080/reproductordual/_reproductorweb_video/html/grabar.html" -->
                             
                             
-                                <br>
-                                <br>
-                                <label for="nombre">Nombre completo</label>
+                               
+                               
+                               
                                 <br/>
+                                <div class="inputs " id="input-nombre">
+                                <label for="nombre" class="label">Nombre completo</label>
                                 <input class="text-input"
                                     type="text" 
                                     id="nombre" 
@@ -55,29 +57,54 @@
                                     placeholder="Ingresa tu nombre"
                                     title=" Solo letras y espacios en blanco"
                                     pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                                    onkeyup="validar(this.form)"
+                                    onkeyup="validar(this.form)"                                    
                                     required
                                     />
-                                <br/>
-                                <br/>
-                                <br>
-                                <label for="mail">Correo Electrónico</label>
-                                <br>
+                                    <i class="validacion-estado fas fa-times-circle"></i>
+                                    <div >
+                                        <p class="msjerrorinput " id="palertnombre">El nombre solo debe contener letras y espacios</p>                                        
+                                    </div>
+
+                                </div>
                                
-                                <input class="text-input"
-                                    type="email" 
-                                    id="mail" 
-                                    name="mail"
-                                    placeholder="Ingresa tu correo"
-                                    title="Email incorrecto" 
-                                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
-                                    onkeyup="validar(this.form)"
-                                    required                                   
-                                    />
-                                <br/>
-                                <br/>
+                                    <br>
+                                    <br>
+                               
+                               <div class="inputs " id="input-mail">
+                               <label for="mail" class="label">Correo Electrónico</label>
+                                <br>                               
+                               <input class="text-input"
+                                   type="email" 
+                                   id="mail" 
+                                   name="mail"
+                                   placeholder="Ingresa tu correo"
+                                   title="Email incorrecto" 
+                                   pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                                   onkeyup="validar(this.form)"
+                                   required                                   
+                                   />
+                                   <i class="validacion-estado fas fa-times-circle" id="iconcorreo"></i>
+                                   <div >
+                                       <p class="msjerrorinput " id="palertcorreo">El correo debe contener "@" y ".com" </p>                                        
+                                   </div>
+
+                               </div>
+                                
+                               
+                                    <br>
+                                    <br>
+                                
+                                
+                                <div id= "grupo_terminos">
+                                    <label class = "check"></label>
+                                    <input class="checkbox" type="checkbox" name="terminos" id="terminos" required>
+                                    He leido y acepto los terminos y condiciones
+
+                                </div>
                                 <br>
-                                <br>
+                                <div class="mensajeError" id="mensajeError">
+                                <i class="fas fa-exclamation-triangle"></i>  Debes aceptar terminos
+                                </div>
 
                         </div>                       
                         
@@ -116,7 +143,8 @@
           
         </script>
         <script src="../js/guardarCorreo.js"></script>
-
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src="../js/validacionform.js"></script>
         
         <?php
      require ("registrar.php");

@@ -32,13 +32,10 @@ function record(stream){
 
         function Start(){
         mediaRecorder.start(),
-       
-        
-        
         console.log("Started");
         btn.removeEventListener("click", Start);
         btn.addEventListener("click", Stop);
-        document.getElementById("takevideo").value= "Detener grabación";
+        document.getElementById("takevideo").innerHTML = "<span>Detener grabación</span> ";
         btn.value = "Stop";
         let temporizador = new Temporizador('temporizador', 299, 0, 60);       
        temporizador.conteoSegundos(),
@@ -51,6 +48,7 @@ function record(stream){
         console.log("Stopped");
         btn.removeEventListener("click", Stop);
         btn.addEventListener("click", Start);
+        document.getElementById("takevideo").innerHTML = "<span>Comenzar a Grabar</span> ";
         btn.value = "start";
         // temp.value="00:00";
     }
@@ -63,12 +61,20 @@ function record(stream){
 
     }
 
-    mediaRecorder.onstop = function (){
-        alert("Finalizó la grabación");
+    mediaRecorder.onstop =  function (){
+        // alert("Finalizó la grabación");
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Finalizó la grabación',
+            showConfirmButton: true,
+            timer: 2000
+          })
 
         let blob = new Blob(arrvideo, {type: "video/webm"});
-        arrvideo =[];
+        arrvideo =[];               
         download(blob);
+        
         
     }
     
@@ -81,8 +87,24 @@ function record(stream){
         document.body.appendChild(link);
         link.click();
         link.remove();
-        window.location.href= ("../html/ver_grabacion.html");
+        redireccionar();
+        
     }
+    var count =4;
+    function redireccionar(){
+    setInterval(() => {
+        count--;
+        if(count == 0){
+            window.location = '../html/ver_grabacion.html';
+            console.log(count);
+        }
+        
+    }, 1000);
+
+}
+    
+
+
     class Temporizador {
         constructor(id, inicio, fin, contadorsec) {
 

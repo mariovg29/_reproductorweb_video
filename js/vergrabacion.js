@@ -6,5 +6,6 @@ function ruta_video(){
     document.getElementById("grabacion")
     .src= "../videos/"+localStorage.getItem("mail")+".webm";
     console.log(ruta);
+    // location.reload();
 
 }
