@@ -3,7 +3,7 @@
 
 const video= document.getElementById('video');
 
-    navigator.mediaDevices.getUserMedia({audio:true, video: true})
+    navigator.mediaDevices.getUserMedia({audio:false, video: true})
 .then(
     (record)
 ).catch(
@@ -31,6 +31,7 @@ function record(stream){
     document.getElementById('takevideo').addEventListener("click", Start);
 
         function Start(){
+            recording();
         mediaRecorder.start(),
         console.log("Started");
         btn.removeEventListener("click", Start);
@@ -63,13 +64,15 @@ function record(stream){
 
     mediaRecorder.onstop =  function (){
         // alert("Finalizó la grabación");
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Finalizó la grabación',
-            showConfirmButton: true,
-            timer: 2000
-          })
+        // Swal.fire({
+        //     position: 'top-end',
+        //     icon: 'success',
+        //     title: 'Finalizó la grabación',
+        //     showConfirmButton: true,
+        //     timer: 2000
+        //   })
+        stopRecording();
+        alerta();
 
         let blob = new Blob(arrvideo, {type: "video/webm"});
         arrvideo =[];               
@@ -147,6 +150,43 @@ function record(stream){
             };
 
         }
+    }
+    function alerta(){
+        let timerInterval
+Swal.fire({
+  title: 'Procesando video',
+  html: 'Espera...',
+  timer: 4000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()    
+    timerInterval = setInterval(() => {      
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+    }
+
+    function recording(){
+        const rec= document.querySelector("#recording-none");
+        rec.classList.remove("recording-none");
+        rec.classList.add("recording-ok");
+    }
+    function stopRecording(){
+
+        const temporizador= document.querySelector("#temporizador");
+        const rec= document.querySelector("#recording-none");
+        temporizador.classList.add("recording-none")
+        rec.classList.remove("recording-ok");
+        rec.classList.add("recording-none");
+
     }
     
 

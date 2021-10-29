@@ -62,10 +62,21 @@
   justify-self: center;
   
 }
-.colage{
+.contenedor-videoteca{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+}
+  /* margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background: #2778c4;  
+} */
+.colage{  
+  padding: 0 30px 0 30px;
+  border-radius: 10px;
+  margin: 0 auto;
   
-  padding: 20px;
-  margin: 20px;
 }
 .contenedor-logo {
   margin: 0;
@@ -89,8 +100,9 @@
   text-align: end;
 }
 .item2{
+  margin-top: 200px;
   text-align: center;
-  line-height: 450px;
+  /* line-height: 450px; */
   color: #ED185C;
   font-weight: bold;
 }
@@ -98,9 +110,15 @@
   width: 30%;
   margin: 0 auto;
 }
+.recording-none{    
+  display: none;
+}
+.recording-ok{
+  margin-left: 90px;
+  display: block;
+}
 .verGrabacion{
-  text-align: center;
-  
+  text-align: center;  
 }
 .guardarTestimonio{
   display: grid;
@@ -170,7 +188,9 @@ color: var(--form-error-color);
 }
 .checkbox{
   margin-right: 10px;
+  
 }
+
 .mensajeError{
   width: 80%;
   height: 40px;
@@ -203,6 +223,7 @@ color: var(--form-error-color);
   transition: .3s ease all;  
   position: relative;
   overflow: hidden;
+  outline: none;
   
 }
 .btn span {

@@ -18,19 +18,26 @@ include("conexion.php");
             $url= $ruta.$correo.$tipo;
 			
             // echo ("<h1>$url</h1>");
-            echo("<video class= 'colage' 
+            
+            echo("<video class='colage'  
             style: padding='20px'
             audio ='false' 
             autoplay='autoplay'             
             loop= 'loop'  
-            onclick = 'repTestimonio()' 
+            
             src = '$url' width='200' height='200' ></video>
-            <script src = '../js/repTestimonio.js'></script>            
+            
+            <script src = '../js/repTestimonio.js'></script>  
+                 
             ");
+            
 		}
 		 mysqli_close($conexion);
         
 
 ?>
+
+
+
 
 

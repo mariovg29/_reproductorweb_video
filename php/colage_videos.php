@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colage Videoteca</title>
 </head>
-<body>      
-     <?php
+<body>   
+    <?php
      require ("consulta.php");
-    //  $conexion= mysql_connect($db_host, $db_usuario, $db_contraseña);
-    //  if(mysql_connect_errno()){
-    //      echo "Fallo conexion a base de datos";
-    //      exit();
-    //  }else echo "good";
+   
      ?>
+     <script src="../js/selector.js"></script>
     
 </body>
 </html>
+
+ 
